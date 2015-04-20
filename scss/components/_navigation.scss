@@ -1,0 +1,367 @@
+/*------------------------------------*\
+
+    $Navigation
+    
+\*------------------------------------*/
+
+.nav-links {
+  float: right;
+
+  a {
+    padding: 1rem;
+    display: inline-block;
+    color: rgba(255, 255, 255, .50);
+    &:hover {
+      color: $base-orange;
+      color: rgba(244, 104, 1, 1);
+      color: $base-white;
+    }
+  }
+}
+
+/* stroke */
+nav.stroke ul li a,
+.nav-links li a,
+a {
+  position: relative;
+  @include transition(all 350ms cubic-bezier(0.325,-.075,0,1.65));
+  
+}
+nav.stroke ul li a:after,
+.nav-links li a:after,
+a:after{
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  padding: 0 .2rem;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '';
+  color: transparent;
+  background-color: $base-white;
+  height: 1px;
+  visibility: hidden;
+  @include scale(0);
+  @include transition(all 350ms cubic-bezier(0.325, -.075, 0, 1.65));
+}
+nav.stroke ul li a:hover:after,
+.nav-links li a:hover:after,
+.nav-links li a.active:after,
+a:hover:after {
+  width: 100%;
+  visibility: visible;
+  @include scale(1);
+  @include transition(all 350ms cubic-bezier(0.325, -.075, 0, 1.65));
+}
+
+.nav {
+  // background-color: $base-color-333;
+  // background-color: rgba(51, 51, 51, .92);
+  background-color: transparent;
+  flex: none;
+  width: 100%;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  z-index: $zindex-2000;
+  // position: fixed;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @include transition(all .25s ease);
+  @include rem(padding, 16px 0);
+}
+
+.header a,
+.header a:hover,
+a.brand,
+a.brand:hover,
+.brand:hover {
+  text-decoration: none;
+  border: 0;
+}
+
+.header a:hover {
+  color: $base-white;
+}
+
+.nav-links a:hover:after {
+  background-color: $base-white;
+}
+
+.brand,
+a.brand {
+  position: relative;
+  display: inline-block;
+  height: 30px; width: 30px;
+  @include rem(margin-top, 16px);
+
+  &:after {
+    border: 0;
+    border: none;
+    height: 0px;
+  }
+}
+
+.brand span {
+  width: 4px;
+  height: 24px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, .40);
+  @include transition(all .25s ease);
+  border: 0;
+}
+
+.brand:hover span {
+  background-color: $base-orange;
+  background-color: rgba(244, 104, 1, 1);
+  background-color: $base-white;
+  border: 0;
+}
+
+.brand span:nth-child(1) {
+  position: relative;
+  @include translateX(0px);
+  top: 0;
+  // @include transition(all .60s cubic-bezier(.58,-0.65,0,1.67));
+  @include transition(all .25s ease-in-out);
+}
+
+.brand span:nth-child(2) {
+  position: relative;
+  @include translateX(2px);
+  top: -4px;
+  //@include transition(all .60s cubic-bezier(.58,-0.65,0,1.67));
+  @include transition(all .25s ease-in-out);
+}
+
+.brand:hover span:nth-child(2),
+.brand:hover span:nth-child(3) {
+  top: 0;
+}
+// .site-header-anchor:hover .brand span:nth-child(2) {
+//   @include translateX(2px);
+//   //@include transition(all .60s cubic-bezier(.58,-0.65,0,1.67));
+//   @include transition(all .25s ease-in-out);
+//   top: 0;
+// }
+
+.brand span:nth-child(3) {
+  position: relative;
+  @include translateX(4px);
+  //@include transition(all .60s cubic-bezier(.58,-0.65,0,1.67));
+  @include transition(all .25s ease-in-out);
+  top: -8px;
+}
+// .site-header-anchor:hover .brand span:nth-child(3) {
+//   @include translateX(4px);
+//   top: 0;
+//   //@include transition(all .60s cubic-bezier(.58,-0.65,0,1.67));
+//   @include transition(all .25s ease-in-out);
+// }
+
+//header nav { display: none; }
+
+nav a {
+  text-decoration: none;
+  color: $base-color-aaa;
+  padding: $base-padding-vertical $base-padding-horizontal;
+  display: inline-block;
+  
+  &:hover {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+
+//////////////////////////////////////////
+
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #333;
+  }
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  // transition: all .5s;
+  @include transition(all 300ms cubic-bezier(0.325,-.075,0,1.65));
+}
+nav ul li a:hover {
+  color: $primary-color;
+  @include transition(all 300ms cubic-bezier(0.325,-.075,0,1.65));
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////
+
+.nav > li > a {
+  display: block;
+  display: inline-block;
+  padding: $base-padding-pill-nav-vertical $base-padding-pill-nav-horizontal;
+  position: relative;
+  @include left-float;
+}
+    // Default Outline //
+    .nav > a.btn--default-outline,
+    .nav > a.default-outline {
+      @include button-version($base-color-777, $btn-default-bg-outline, $btn-default-border-outline);
+      &:hover {
+        border-color: $base-color-777;
+        color: $base-white;
+        background-color: $base-color-777;
+      }
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+    
+    // Primary Outline //
+    .nav > li > a.btn--primary-outline,
+    .nav > li > a.primary-outline {
+      @include button-version($btn-primary-color-outline, $btn-primary-bg-outline, $btn-primary-border-outline);
+      &:hover {
+        border-color: $primary-color;
+        color: $base-white;
+        background-color: $primary-color;
+      }
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+    
+    // Danger Outline //
+    .nav > li > a.btn--danger-outline,
+    .nav > li > a.danger-outline {
+      @include button-version($btn-danger-color-outline, $btn-danger-bg-outline, $btn-danger-border-outline);
+      &:hover {
+        border-color: $danger-color;
+        color: $base-white;
+        background-color: $danger-color;
+      }
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+    
+    // Info Outline //
+    .nav > li > a.btn--info-outline,
+    .nav > li > a.info-outline {
+      @include button-version($btn-info-color-outline, $btn-info-bg-outline, $btn-info-border-outline);
+      &:hover {
+        border-color: $info-color;
+        color: $base-white;
+        background-color: $info-color;
+      }
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+    
+    // Warning Outline //
+    .nav > li > a.btn--warning-outline,
+    .nav > li > a.warning-outline {
+      @include button-version($btn-warning-color-outline, $btn-warning-bg-outline, $btn-warning-border-outline);
+      &:hover {
+        border-color: $warning-color;
+        color: $base-white;
+        background-color: $warning-color;
+      }
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+    
+    // Success Outline //
+    .nav > li > a.btn--success-outline,
+    .nav > li > a.success-outline {
+      @include button-version($btn-success-color-outline, $btn-success-bg-outline, $btn-success-border-outline);
+      &:hover {
+        border-color: $success-color;
+        color: $base-white;
+        background-color: $success-color;
+      }
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+    
+    .nav > li > a:hover.btn--default,
+    .nav > li > a:hover.btn--primary,
+    .nav > li > a:hover.btn--info,
+    .nav > li > a:hover.btn--success,
+    .nav > li > a:hover.btn--danger,
+    .nav > li > a:hover.btn--warning {
+      color: $base-white;
+    }
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+.pill-nav > li > a {
+  display: inline-block;
+  position: relative;
+  padding: $base-padding-pill-nav-vertical $base-padding-pill-nav-horizontal;
+  @include left-float;
+  @include border-radius($border-radius);
+}
+
+.pill-nav > li > a:hover,
+.pill-nav > li > a:focus {
+  text-decoration: none;
+  background-color: $base-color-eee;
+}
+
+.pill-nav li,
+.pill-nav > li+li {
+  display: inline-block;
+  @include rem(margin-right, 4px);
+}
+
+.pill-nav > li > a.active {
+  background-color: $primary-color;
+  color: $base-white;
+  
+  &:hover {
+    background-color: darken($primary-color, 5%);
+  }
+  
+  &:active {
+    outline: 0;
+    @include box-shadow(inset 0px 3px 6px rgba(0,0,0,.25));
+    @include transition(all .25s ease);
+  }
+}

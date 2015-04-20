@@ -1,0 +1,119 @@
+/*------------------------------------*\
+
+    $Homepage
+    
+\*------------------------------------*/
+
+.intro {
+  display: flex;
+  height:100%; width:100%;
+    height: 100vh;
+  align-items: center;
+  font-family: $title-font;
+}
+
+.landing {
+  background-color: $primary-color;
+}
+
+.about {
+    background-color: $warning-color;
+}
+
+//.hero-title {
+//  @include rem(font-size, 48px);
+//  line-height: 1.15;
+//  margin-bottom: 0;
+//  margin-top: 0;
+//  font-family: 'ff-meta-web-pro-condensed', 'alternate-gothic-no-1-d';
+//}
+
+//.hero-img {
+//  width: 100%;
+//  //width: 50%;
+//  float: right;
+//  text-align: center;
+//  position: relative;
+//  // margin-top: -30px;
+//  right: 3%;
+//  // top: 50%;
+//  // @include translateY(-50%);
+//}
+
+.intro-hey {
+  margin-bottom: 2rem;
+  color: rgba(0, 0, 0, .35);
+  letter-spacing: 6px;
+}
+
+.intro-title {
+  @include rem(font-size, 58px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-top: 0;
+  color: $base-white;
+}
+
+.match-height-blocks {
+  //display: table-cell;
+  display: table-row;
+  float: none;
+  vertical-align: top;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.match-height {
+  display: table;
+  table-layout: fixed;
+  float:left; width:100%;
+}
+
+.match-height-box {
+  display: table-cell;
+  float: none;
+  vertical-align: top;
+  width: 50%; 
+  padding:6%;
+  background-color: $base-color-eee;
+}
+
+.box-img {
+  //background: url('/img/ideas.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat:no-repeat;
+  @include background-size(cover);
+}
+
+.match-height-title-number {
+  font-family: 'Titillium Web';
+  letter-spacing: -4px;
+  @include rem(font-size, 80px);
+  font-weight: 800;
+}
+
+.match-height-title {
+  margin-bottom:1rem; 
+  color: $base-orange;
+  letter-spacing: 6px;
+}
+
+.skills-svg {
+  width: 100%;
+  margin: 2rem 0;
+  height: 240px;
+}
+
+.skills-title {
+  @include rem(font-size, 16px);
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0;
+}
+
+.know-me {
+  background-color: $base-color-eee;
+  padding: 4rem 0;
+}

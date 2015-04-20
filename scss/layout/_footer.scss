@@ -1,0 +1,62 @@
+footer {
+  background-color: $base-color-333;
+  padding: 3rem 0;
+  @include rem(font-size, 14px);
+
+  h3 {
+    color: $base-white;
+    margin-bottom: 1rem;
+    @include rem(font-size, 14px);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+    }
+  }
+
+  p {
+    @include rem(font-size, 16px);
+  }
+}
+
+hr {
+  border-color: $base-color-555;
+  margin: 2rem 0;
+}
+
+.c-w {
+  @include rem(font-size, 12px);
+}
+
+.email {
+  color: $base-white;
+}
+
+footer a {
+  color: $base-color-777;
+  padding: 0 0 4px 0;
+
+  &:hover {
+    color: $base-white;
+    text-decoration: none;
+  }
+}
+
+footer a:after,
+footer ul.bl-links li a:hover:after,
+.footer ul.bl-links li a:hover:after {
+  border: 0!important;
+  border: none;
+  height: 0px!important;
+}
+
+.f-contact li {
+  display: inline-block;
+  float: left;
+  color: $base-color-ccc;
+  @include rem(font-size, 12px);
+}

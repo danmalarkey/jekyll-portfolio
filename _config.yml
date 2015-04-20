@@ -6,6 +6,10 @@ layouts:     ./_layouts
 data_source: ./_data
 collections: null
 
+# sass:
+#    style: :compressed
+#    sass_dir: '/Users/danmalarkey/Projects/personal/jekyll-portfolio/css';
+
 # Handling Reading
 safe:         false
 include:      [".htaccess"]
@@ -40,9 +44,10 @@ baseurl: "" # does not include hostname
 relative_permalinks: false
 
 # Outputting
-permalink:     date
+#permalink:     date
 paginate_path: /page:num
 timezone:      null
+permalink: /:categories/:year/:month/:title.html
 
 quiet:    false
 defaults: []

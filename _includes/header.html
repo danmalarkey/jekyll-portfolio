@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="us">
+    <!-- Default language is English. Please change as needed. -->
+
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible" content="IE=edge' />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicon -->
+    <!--<link rel="icon" type="image/png" href="img/yourimg.png" />-->
+
+    <!-- Css Files-->
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <title>Dan Malarkey // Digital Product Designer // User Experience Designer // User Interface Designer</title>
+    <script src="//use.typekit.net/hzc5hrh.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body class='home' style="">
+
+    <header class="nav site-header" role="navigation">
+        <div class="container">
+            <div class="row-fluid fi-delay one">
+                <a href="/" id='trigger' class='brand left-float'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <ul class="il-links nav-links">
+                    <li><a {% if page.url =="/about/about.html" %} class="active" {% endif %} href="/about/">About</a></li>
+                    <li><a {% if page.url =="/process/process.html" %} class="active" {% endif %} href="/process/">Process</a></li>
+                    <li><a {% if page.url =="/journal/index.html" or page.layout == 'blog_post' %} class="active" {% endif %} href="/journal/">Journal</a></li>
+                    <li><a href="#">Chat</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>

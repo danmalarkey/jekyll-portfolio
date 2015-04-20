@@ -1,0 +1,294 @@
+/*------------------------------------*\
+
+    $Helper Classes
+    
+\*------------------------------------*/
+
+/*------------------------------------*\
+
+    $Inline Links
+    
+\*------------------------------------*/
+.il-links {
+  margin: 0;
+}
+
+.il-links li {
+  display: inline-block;
+  padding-right: 1rem;
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.il-links a {
+  text-decoration: none;
+}
+
+
+
+
+/*------------------------------------*\
+
+    $Block Links
+    
+\*------------------------------------*/
+.bl-links {
+}
+
+.bl-links li {
+  display: block;
+}
+
+.bl-links a {
+  text-decoration: none;
+  display: block;
+}
+
+
+.no-b {
+  border-color: transparent;
+  border: none;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.hide-text {
+  font: 0/0;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; 
+}
+
+.is-disabled,
+.disabled {
+  pointer-events: none;
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+@mixin left-float { 
+  float: left; 
+} 
+
+.left-float {
+  float: left;
+}
+
+  @mixin right-float { 
+    float: right; 
+  } 
+
+  .right-float {
+    float: right;
+  }
+  
+    @mixin center-float {
+      margin: 0 auto; 
+    }
+    
+      @mixin no-float {
+        float: none; 
+      }
+                           
+@mixin text-left {
+  text-align: left; 
+}
+
+  @mixin text-right { 
+    text-align: right; 
+  }
+  
+    @mixin text-center { 
+      text-align: center; 
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+      @mixin justified { 
+        text-align: justify; 
+      }
+
+// @media $bp-desktop {
+//   .desktop-hidden {
+//     visibility: hidden;
+//     display: none;
+//   }
+// }
+
+
+    .desktop-hidden {
+      visibility: hidden;
+      display: none;
+      @include bp(mobile) {
+        display: block;
+        visibility: visible;
+      }
+      @include bp(tablet) {
+        display: block;
+        visibility: visible;
+      }
+    }
+
+// @media $bp-tablet {
+//   .tablet-hidden {
+//     visibility: hidden;
+//     display: none;
+//   }
+// }
+  
+  .tablet-hidden {
+    visibility: hidden;
+    display: none;
+    @include bp(desktop) {
+      display: block;
+      visibility: visible;
+    }
+    @include bp(mobile) {
+      display: block;
+      visibility: visible;
+    } 
+  }
+
+// @media $bp-mobile {
+//   .mobile-hidden {
+//     visibility: hidden;
+//     display: none;
+//   }
+// }
+
+  .mobile-hidden {
+    visibility: hidden;
+    display: none;
+    @include bp(tablet) {
+      display: block;
+      visibility: visible;
+    }
+    @include bp(desktop) {
+      display: block;
+      visibility: visible;
+    }
+  }
+
+// Show  
+
+// @media $bp-mobile {
+//   .show-mobile {
+//     visibility: visible;
+//     display: block;
+//   }
+// }
+
+// .show-mobile {
+//   display: none;
+//   visibility: hidden; 
+  
+//   $media $bp-mobile {
+//     display: block;
+//     visibility: visible;
+//   }
+// }
+
+  .show-mobile {
+    display: none;
+    visibility: hidden; 
+    
+    @include bp(mobile) {
+      display: block;
+      visibility: visible;
+    }
+  }
+
+.show-tablet {
+  display: none;
+  visibility: hidden;
+  
+  @include bp(tablet) {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.show-desktop {
+  display: none;
+  visibility: hidden;
+  
+  @include bp(desktop) {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  @include transition(opacity .45s linear);
+}
+
+.fade {
+  opacity: 0;
+  @include transition(opacity .45s linear);
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeInDelay { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeInDelay { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeInDelay { from { opacity:0; } to { opacity:1; } }
+
+.fi-delay {
+ opacity:0;  /* make things invisible upon start */
+ -webkit-animation:fadeInDelay ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+ -moz-animation:fadeInDelay ease-in 1;
+ animation:fadeInDelay ease-in 1;
+ position: relative;
+ z-index: $zindex-1090;
+ 
+ -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+ -moz-animation-fill-mode:forwards;
+ animation-fill-mode:forwards;
+ 
+ -webkit-animation-duration:1s;
+ -moz-animation-duration:1s;
+ animation-duration:1s;
+}
+ 
+.fi-delay.one {
+-webkit-animation-delay: 0.7s;
+-moz-animation-delay: 0.7s;
+animation-delay: 0.7s;
+}
+ 
+.fi-delay.two {
+-webkit-animation-delay: 1.2s;
+-moz-animation-delay:1.2s;
+animation-delay: 1.2s;
+}
+ 
+.fi-delay.three {
+-webkit-animation-delay: 1.6s;
+-moz-animation-delay: 1.6s;
+animation-delay: 1.6s;
+}
+
+.fi-delay.four {
+-webkit-animation-delay: 2.1s;
+-moz-animation-delay: 2.1s;
+animation-delay: 2.1s;
+}
